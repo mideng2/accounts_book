@@ -9,7 +9,7 @@ export default defineConfig({
         vue(),
         VitePWA({
             registerType: 'autoUpdate',
-            includeAssets: ['icons/icon.svg', 'icons/maskable-icon.svg'],
+            includeAssets: ['icons/icon.png', 'icons/maskable-icon.png'],
             manifest: {
                 name: 'Money PWA',
                 short_name: 'Money',
@@ -22,15 +22,15 @@ export default defineConfig({
                 scope: repoBase,
                 icons: [
                     {
-                        src: `${repoBase}icons/icon.svg`,
-                        sizes: 'any',
-                        type: 'image/svg+xml',
+                        src: `${repoBase}icons/icon.png`,
+                        sizes: '512x512',
+                        type: 'image/png',
                         purpose: 'any'
                     },
                     {
-                        src: `${repoBase}icons/maskable-icon.svg`,
-                        sizes: 'any',
-                        type: 'image/svg+xml',
+                        src: `${repoBase}icons/maskable-icon.png`,
+                        sizes: '512x512',
+                        type: 'image/png',
                         purpose: 'maskable'
                     }
                 ]
