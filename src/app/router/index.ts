@@ -1,4 +1,4 @@
-import { createRouter as createVueRouter, createWebHistory } from 'vue-router';
+import { createRouter as createVueRouter, createWebHashHistory } from 'vue-router';
 import AppShell from '@/components/business/AppShell.vue';
 import LedgerPage from '@/pages/ledger/LedgerPage.vue';
 import AddTransactionPage from '@/pages/add/AddTransactionPage.vue';
@@ -11,7 +11,7 @@ import BackupPage from '@/pages/backup/BackupPage.vue';
 
 export function createRouter() {
   return createVueRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(import.meta.env.BASE_URL),
     routes: [
       {
         path: '/',

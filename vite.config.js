@@ -2,7 +2,9 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { VitePWA } from 'vite-plugin-pwa';
 import { fileURLToPath, URL } from 'node:url';
+const repoBase = '/accounts_book/';
 export default defineConfig({
+    base: repoBase,
     plugins: [
         vue(),
         VitePWA({
@@ -16,16 +18,17 @@ export default defineConfig({
                 background_color: '#f7f1e8',
                 display: 'standalone',
                 orientation: 'portrait',
-                start_url: '/',
+                start_url: repoBase,
+                scope: repoBase,
                 icons: [
                     {
-                        src: '/icons/icon.svg',
+                        src: `${repoBase}icons/icon.svg`,
                         sizes: 'any',
                         type: 'image/svg+xml',
                         purpose: 'any'
                     },
                     {
-                        src: '/icons/maskable-icon.svg',
+                        src: `${repoBase}icons/maskable-icon.svg`,
                         sizes: 'any',
                         type: 'image/svg+xml',
                         purpose: 'maskable'
